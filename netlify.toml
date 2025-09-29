@@ -1,0 +1,56 @@
+[build]
+  publish = "."
+  command = ""
+
+[build.environment]
+  VITE_FIREBASE_API_KEY = "AIzaSy..."
+  VITE_FIREBASE_AUTH_DOMAIN = "naija-truths.firebaseapp.com"
+  VITE_FIREBASE_PROJECT_ID = "naija-truths"
+  VITE_FIREBASE_STORAGE_BUCKET = "naija-truths.firebasestorage.app"
+  VITE_FIREBASE_MESSAGING_SENDER_ID = "476936659655"
+  VITE_FIREBASE_APP_ID = "1:476936659655:web:0df8b9419012dac9e014e2"
+  VITE_FIREBASE_MEASUREMENT_ID = "G-69WH8S8X8H"
+
+# (You don’t need build.processing unless you really want to disable features)
+
+[[redirects]]
+  from = "/category/:category"
+  to = "/category.html"
+  status = 200
+
+[[redirects]]
+  from = "/:category/:slug"
+  to = "/articles.html"
+  status = 200
+
+[[redirects]]
+  from = "/search"
+  to = "/search.html"
+  status = 200
+
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    Content-Type = "text/css"
