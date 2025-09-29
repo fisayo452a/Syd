@@ -4132,3 +4132,6 @@ main h3 {
         line-height: 36px;
     }
 }
+.article-card[data-preview="true"] .comment-section {
+  display: none;
+}
