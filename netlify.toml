@@ -11,6 +11,9 @@
   VITE_FIREBASE_APP_ID = "1:476936659655:web:0df8b9419012dac9e014e2"
   VITE_FIREBASE_MEASUREMENT_ID = "G-69WH8S8X8H"
 
+[build.processing]
+  css = false
+
 [[redirects]]
   from = "/category/:category"
   to = "/category.html"
@@ -55,4 +58,5 @@
 [[headers]]
   for = "/*.css"
   [headers.values]
-    Cache-Control = "public, max-age=31536000"
+    Cache-Control = "public, max-age=0, must-revalidate"
+    Content-Type = "text/css"
